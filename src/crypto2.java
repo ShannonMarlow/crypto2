@@ -1,10 +1,19 @@
 import java.util.*;
 public class crypto2 {
     public static void main(String[] argv) {
-    char[] plain =
-            {'h','e','l','l','o'};
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("What text would you like to encrypt? ");
+        //Takes in string
+        String plainString = scanner.nextLine();
+        //Creates array of string length
+        char[] text = new char[plainString.length()];
+        //Copies character by character into array
+        for(int i=0; i<plainString.length();i++){
+            text[i] = plainString.charAt(i);
+        }
     int shift = 2;
-    char[] encrypted = caesarEncrypt(plain, shift);
+    char[] encrypted = caesarEncrypt(text, shift);
+
     System.out.println(encrypted);
 
     }
