@@ -1,0 +1,18 @@
+        normaliseText("This is some\"really\"great.(Text)!?");
+        caeserify("THISISSOMEREALLYGREATTEXT");
+    }
+    public static String normaliseText(String inputText){
+            inputText = inputText.replaceAll("\\W", "");
+            String text = (inputText.toUpperCase());
+            return text;
+    }
+    public static String caeserify(String text, int shift){
+
+        for (int i=0; i<text.length(); i++ ){
+
+            text.indexOf(i) equal.shiftedText.indexOf(i);
+
+        }
+
+        }
+    }
