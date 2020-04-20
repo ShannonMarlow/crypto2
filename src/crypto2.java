@@ -8,24 +8,32 @@ public class crypto2 {
         //Creates array of string length
         char[] text = new char[plainString.length()];
         //Copies character by character into array
-        for(int i=0; i<plainString.length();i++){
+        for (int i = 0; i < plainString.length(); i++) {
             text[i] = plainString.charAt(i);
         }
-    int shift = 2;
-    char[] encrypted = caesarEncrypt(text, shift);
-
-    System.out.println(encrypted);
+        //Takes in value to shift by
+        System.out.println("Enter key to shift by: ");
+        int shift = scanner.nextInt();
+        char[] encrypted = caesarEncrypt(text, shift);
+        //Prints out encrypted string
+        System.out.println(encrypted);
 
     }
-    static char[] caesarEncrypt(char[] text, int shift){
+
+    //Takes in parameters for function
+    static char[] caesarEncrypt(char[] text, int shift) {
+        //n limits for loop until string has ended
         int n = text.length;
-        char[] encrypted = new char [n];
+        //creates new char array to input letters from string
+        char[] encrypted = new char[n];
         int base = 'a';
-        for (int i=0; i<n; i++){
+        //Shifts values by key
+        for (int i = 0; i < n; i++) {
             int offset = (int) text[i] - base;
-            int shifted = (offset+shift) % 26;
-            encrypted[i] = (char)(base+shifted);
+            int shifted = (offset + shift) % 26;
+            encrypted[i] = (char) (base + shifted);
         }
+        //Returns encrypted string to method
         return encrypted;
     }
 }
